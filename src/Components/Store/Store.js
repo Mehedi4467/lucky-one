@@ -47,6 +47,7 @@ const Store = () => {
 
     }
 
+
     return (
         <div className='toy-body'>
             <div className='toy-product'>
