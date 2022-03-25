@@ -5,6 +5,7 @@ import './Store.css';
 const Store = () => {
 
     const [toys, setToys] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch('fakedb.json')
@@ -14,8 +15,22 @@ const Store = () => {
 
 
     const addToCart = (id) => {
-        console.log('hello world', id);
+        const product = toys.find(toy => toy.id === id);
+
+
+        const uniqueId = cart.filter(uniToy => uniToy.id !== id);
+        const newCart = [...uniqueId, product];
+        if (newCart.length <= 4) {
+            setCart(newCart);
+        }
     }
+
+    const removeCart = () => {
+        const newCart = [];
+        setCart(newCart);
+    }
+    // console.log(newCart);
+
 
     return (
         <div className='toy-body'>
@@ -25,7 +40,7 @@ const Store = () => {
                 }
             </div>
             <div>
-                <Cart ></Cart>
+                <Cart cart={cart} removeCart={removeCart} ></Cart>
             </div>
         </div>
     );
