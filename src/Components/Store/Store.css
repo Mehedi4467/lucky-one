@@ -11,3 +11,14 @@
     gap: 30px;
 
 }
+
+
+@media screen and (max-width: 800px) {
+    .toy-product {
+
+        grid-template-columns: 1fr;
+
+
+    }
+
+}

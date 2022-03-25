@@ -15,13 +15,16 @@ const Cart = ({ cart, removeCart, singleCartToyRemove }) => {
             const winItem = cart.find((cartItem, index) => index === randomNumber);
             setWinMassage(winItem);
         }
+        else {
+            setWinMassage('');
+        }
 
     }
 
     return (
         <div className='cart'>
             <h2>Selected toy</h2>
-            <p>{winMassage.name}</p>
+            <p className='winItem'>{winMassage.name}</p>
             <div className='table-div'>
                 <table>
 

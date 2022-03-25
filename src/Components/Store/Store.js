@@ -38,12 +38,14 @@ const Store = () => {
     //remove single cart item
     const singleCartToyRemove = (id) => {
 
-        const deleteIndex = cart.map((deleteItem, index) => deleteItem.id === id ? index : false);
+        const deleteIndex = cart.find((deleteItem) => deleteItem.id === id);
+
         let newCart = [...cart];
         if (deleteIndex) {
-            newCart.splice(deleteIndex, 1);
+            newCart.splice(cart.indexOf(deleteIndex), 1);
+            setCart(newCart);
         }
-        setCart(newCart);
+
 
     }
 

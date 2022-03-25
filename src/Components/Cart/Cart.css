@@ -55,3 +55,11 @@
 .btn button:hover {
     background-color: #a55eea;
 }
+
+.winItem {
+    padding: 10px;
+    background-color: #3867d6;
+    color: #ffff;
+    font-size: 15px;
+    border-radius: 5px;
+}
