@@ -1,0 +1,21 @@
+.cart {
+    background-color: #CCE8FF;
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cart h2 {
+    color: blueviolet;
+}
+
+/* .remove-icon {
+
+    background-color: #4b7bec;
+    border: 1px solid #4b7bec;
+    border-radius: 100%;
+}
+
+.remove-icon:hover {
+    background-color: #fff;
+} */

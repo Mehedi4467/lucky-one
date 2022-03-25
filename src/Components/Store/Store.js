@@ -13,15 +13,19 @@ const Store = () => {
     }, []);
 
 
+    const addToCart = (id) => {
+        console.log('hello world', id);
+    }
+
     return (
         <div className='toy-body'>
             <div className='toy-product'>
                 {
-                    toys.map(toy => <Toy toy={toy} key={toy.id}></Toy>)
+                    toys.map(toy => <Toy toy={toy} key={toy.id} addToCart={addToCart}></Toy>)
                 }
             </div>
             <div>
-                <Cart></Cart>
+                <Cart ></Cart>
             </div>
         </div>
     );
