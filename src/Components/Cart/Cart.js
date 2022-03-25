@@ -3,7 +3,7 @@ import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ cart, removeCart }) => {
+const Cart = ({ cart, removeCart, singleCartToyRemove }) => {
     // console.log(cart);
     return (
         <div className='cart'>
@@ -20,10 +20,10 @@ const Cart = ({ cart, removeCart }) => {
                         {
                             cart.map(toy =>
 
-                                <tr>
+                                <tr key={toy.id}>
                                     <td><img src={toy.image} height='50px' width='50px' alt="" /> </td>
                                     <td>{toy.name}</td>
-                                    <div className='remove-icon'><td> <FontAwesomeIcon icon={faRemove} size='sm' color='white' /></td></div>
+                                    <td className='remove-icon' onClick={() => singleCartToyRemove(toy.id)}> <FontAwesomeIcon icon={faRemove} size='sm' color='white' /></td>
 
                                 </tr>
                             )
