@@ -1,0 +1,51 @@
+.single-product {
+    box-shadow: 1px 1px 30px 0px rgba(0, 0, 255, .2);
+    padding: 30px 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.single-product img {
+    width: 200px;
+    height: 200px;
+}
+
+
+.toy-image {
+    display: flex;
+    justify-content: center;
+
+}
+
+.toy-info {
+    margin-top: 10px;
+}
+
+.toy-name {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: 6px;
+    margin-bottom: 1px;
+    color: #0E161A;
+}
+
+
+
+.cart-btn button {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px 0;
+    width: 100%;
+    background: blueviolet;
+    border: 1px solid #95A0A7;
+    cursor: pointer;
+    border-radius: 0px 0px 8px 8px;
+}
