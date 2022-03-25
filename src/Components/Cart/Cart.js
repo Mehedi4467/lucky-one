@@ -3,7 +3,7 @@ import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, removeCart }) => {
     // console.log(cart);
     return (
         <div className='cart'>
@@ -34,7 +34,7 @@ const Cart = ({ cart }) => {
 
             <div className='btn'>
                 <button>Choose 1 For Me</button>
-                <button>Remove Cart</button>
+                <button onClick={() => removeCart()}>Remove Cart</button>
             </div>
 
         </div>

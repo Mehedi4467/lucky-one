@@ -29,7 +29,7 @@ const Store = () => {
         const newCart = [];
         setCart(newCart);
     }
-    // console.log(newCart);
+
 
 
     return (
