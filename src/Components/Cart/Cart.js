@@ -26,7 +26,7 @@ const Cart = ({ cart, removeCart, singleCartToyRemove, cartBox, showCart }) => {
     return (
         <div className={`cart ${cartBox ? "hide" : "show"}`} >
             <h2>Selected toy</h2>
-            <p className='winItem'>{winMassage.name}</p>
+            <p className='winItem'>That product should you buy: {winMassage.name}</p>
             <div className='table-div'>
                 <table>
 

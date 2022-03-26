@@ -29,6 +29,9 @@ const Store = () => {
             if (newCart.length <= 4) {
                 setCart(newCart);
             }
+            else {
+                alert("You have already added 4 Items.");
+            }
         }
         else {
             alert("Oop!! This Item already exists");
