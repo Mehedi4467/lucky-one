@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Cart from '../Cart/Cart';
+import { Cart, CartBox } from '../Cart/Cart';
+
 import Toy from '../Toy/Toy';
 import './Store.css';
 const Store = () => {
 
     const [toys, setToys] = useState([]);
     const [cart, setCart] = useState([]);
+    const [cartBox, showCart] = useState(true);
+
 
     useEffect(() => {
         fetch('fakedb.json')
@@ -26,6 +29,9 @@ const Store = () => {
             if (newCart.length <= 4) {
                 setCart(newCart);
             }
+        }
+        else {
+            alert("Oop!! This Item already exists");
         }
 
     }
@@ -50,6 +56,9 @@ const Store = () => {
     }
 
 
+
+
+
     return (
         <div className='toy-body'>
             <div className='toy-product'>
@@ -58,7 +67,9 @@ const Store = () => {
                 }
             </div>
             <div>
-                <Cart cart={cart} removeCart={removeCart} singleCartToyRemove={singleCartToyRemove}></Cart>
+                <Cart cart={cart} removeCart={removeCart} singleCartToyRemove={singleCartToyRemove} cartBox={cartBox} showCart={() => showCart(true)}  ></Cart>
+                <CartBox cart={cart} showCart={() => showCart(false)} cartBox={cartBox} ></CartBox>
+
             </div>
         </div>
     );

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRemove } from '@fortawesome/free-solid-svg-icons';
+import { faRemove, faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ cart, removeCart, singleCartToyRemove }) => {
-    // console.log(cart.length);
+const Cart = ({ cart, removeCart, singleCartToyRemove, cartBox, showCart }) => {
+
     const [winMassage, setWinMassage] = useState('');
+    // const [hide, setHide] = useState(false);
+
 
     // one item choose function
 
@@ -16,13 +18,13 @@ const Cart = ({ cart, removeCart, singleCartToyRemove }) => {
             setWinMassage(winItem);
         }
         else {
-            setWinMassage('');
+            alert('Please select 4 item');
         }
 
     }
 
     return (
-        <div className='cart'>
+        <div className={`cart ${cartBox ? "hide" : "show"}`} >
             <h2>Selected toy</h2>
             <p className='winItem'>{winMassage.name}</p>
             <div className='table-div'>
@@ -52,10 +54,28 @@ const Cart = ({ cart, removeCart, singleCartToyRemove }) => {
             <div className='btn'>
                 <button onClick={oneItemChoose}>Choose 1 For Me</button>
                 <button onClick={() => removeCart()}>Remove Cart</button>
+                <div className='close-cart'>
+                    <button onClick={() => showCart()}> Close</button>
+
+                </div>
+
             </div>
 
-        </div>
+        </div >
+
     );
 };
 
-export default Cart;
+const CartBox = ({ showCart, cartBox, cart }) => {
+
+
+    return (
+        <div className={`cart-box ${cartBox ? "show" : "hide"}`} onClick={() => showCart()} >
+            <p>{cart.length}</p>
+            <FontAwesomeIcon icon={faBasketShopping} size='3x' color='blue' />
+        </div>
+    )
+
+}
+
+export { Cart, CartBox };
